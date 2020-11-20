@@ -1,0 +1,22 @@
+tr:nth-child(odd){
+    background-color: #cccccc;
+    
+}
+td, th{
+    padding: 0px;
+    border-collapse:collapse;
+    padding: 10px 0px;
+    width: 11%;
+    text-align: center;
+}
+table{
+    border-collapse:collapse;
+    width: 100%;
+}
+tr{
+    width: 100%;
+}
+tr:hover{
+    color: white;
+    background-color: #555;
+}

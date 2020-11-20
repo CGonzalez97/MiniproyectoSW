@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Planet} from '../interfaces/Planet';
 import {PlanetService} from '../services/planetservice';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-planets-listado',
@@ -12,7 +12,6 @@ export class PlanetsListadoComponent implements OnInit {
 
   listadoPlanetas: Planet[];
   columnsToDisplay = ['name', 'rotation_period','orbital_period','diameter','climate','gravity','terrain','surface_water','population'];
-  /*http:HttpClient = new HttpClient();*/
   planetService:PlanetService;
 
   constructor(planetService: PlanetService) {
@@ -20,14 +19,14 @@ export class PlanetsListadoComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    //this.loadPlanets();
+    this.loadPlanets();
   }
 
-  /*loadPlanets() {
+  loadPlanets() {
     this.planetService.getPlanets().subscribe(resp => {
        this.listadoPlanetas = resp.results;
     });
- }*/
+ }
 
 
 }

@@ -3,44 +3,27 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import {PlanetResponse} from '../interfaces/PlanetResponse';
 
+
+const direccionAPI = "https://swapi.dev/api/planets/";
+
+const requestOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+};
+
 @Injectable({
   providedIn: 'root'
 })
 export class PlanetService {
 
-  direccionAPI = 'https://swapi.dev/api/planets';
-  /*header = {
-    "Content-Type":"application/json",
-    "Vary":"Accept",
-    "Allow":[
-      "GET",
-      "HEAD",
-      "OPTIONS"
-    ]
-  }*/
-  header:HttpHeaders = new HttpHeaders();
+  
   
 
-  constructor(private http: HttpClient) {
-    this.header.append('Content-Type','application/json');
-    this.header.append('Vary','Accept');
-    this.header.append('Allow',[
-      'GET',
-      'HEAD',
-      'OPTIONS'
-    ]);
-   }
+  constructor(private http: HttpClient) {   }
 
-  /*getPlanets(): Observable<PlanetResponse> {
-    return this.http.get<PlanetResponse>(
-      this.direccionAPI,
-      this.header
-
-    );
-  }*/
-
-  /*getPlanets(): Observable<PlanetsResponse> {
-    return this.http.get<PlanetsResponse>( this.urlAPI, /this.header/ );
-  }*/
+  getPlanets(): Observable<PlanetResponse> {
+    return this.http.get<PlanetResponse>( direccionAPI, requestOptions );
+  }
 
 }
