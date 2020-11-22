@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {PlanetService} from './services/planetservice';
+import {FilmsService} from './services/filmservice';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatTableModule} from '@angular/material/table';
@@ -14,11 +15,13 @@ import { PlanetsListadoComponent } from './planets-listado/planets-listado.compo
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { FilmsListadoComponent } from './films-listado/films-listado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlanetsListadoComponent
+    PlanetsListadoComponent,
+    FilmsListadoComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatToolbarModule,
     MatIconModule
   ],
-  providers: [PlanetService],
+  providers: [PlanetService,
+    FilmsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

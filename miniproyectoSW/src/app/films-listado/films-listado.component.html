@@ -1,0 +1,27 @@
+<table>
+    <tr>
+        <th>Titulo</th>
+        <th>Nº Episodio</th>
+        <th>Opening</th>
+        <th>Director</th>
+        <th>Productor</th>
+        <th>Fecha de lanzamiento</th>
+    </tr>
+    <tr *ngFor="let elemento of listadoPeliculas">
+        <td>{{elemento.title}}</td>
+        <td>{{elemento.episode_id}}</td>
+        <td>{{elemento.opening_crawl}}</td>
+        <td>{{elemento.director}}</td>
+        <td>{{elemento.producer}}</td>
+        <td>{{elemento.release_date}}</td>
+    </tr>
+</table>
+
+<!--
+    title: string;
+    episode_id: number;
+    opening_crawl: string;
+    director: string;
+    producer: string;
+    release_date: string;
+-->
